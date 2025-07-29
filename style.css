@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    --neutral_0: hsl(0, 0%, 100%);;
+    --neutral_300: hsl(252, 6%, 83%);
+    --Neutral_500: hsl(245, 15%, 58%);
+    --Neutral_700: hsl(245, 19%, 35%);
+    --Neutral_900: hsl(248, 70%, 10%);
+    --Orange_500: hsl(7, 88%, 67%);
+    --Orange_700: hsl(7, 71%, 60%);
+    --Gradient_text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,33 +18,139 @@
 }
 
 body {
+    align-items: start;
     background-image: url('./assets/images/background-desktop.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
+    color: var(--neutral_0);
+    display: flex;
+    justify-content: center;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin: 0;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
+    overflow: hidden;
 }
 
 .lines-background {
     position: fixed;
+    z-index: -1;
+}
+
+.backgrund-circles {
+    position: absolute;
     z-index: 0;
 }
 
+.lines-background {
+    position: absolute;
+    z-index: 0;
+}
+
+#circle-top {
+    left: 5%;
+    top: -120px;
+}
+
+#circle-bottom {
+    bottom: 25%;
+    right: 20%;
+}
+
+#line-bottom {
+    bottom: 0px;
+    left: 0px;
+}
+
+#line-top {
+    top: 5%;
+    right: 0px;
+}
+
 .container {
+    align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    max-width: 800px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+header p {
+    color: var(--neutral_300);
+    font-size: 18px;
+    font-weight: 400;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    font-size: 16px;
+    font-weight: 200;
     gap: 22px;
+    width: 60%;
 }
 
 .input {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+}
+
+.drop-zone {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px var(--neutral_300) dashed;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 120px;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.drop-zone img {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px var(--neutral_0) solid;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.file-info {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 8px;
+    font-weight: 100;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.hidden {
+    display: none;
 }

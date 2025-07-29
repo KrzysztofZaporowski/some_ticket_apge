@@ -12,6 +12,10 @@
 </head>
 <body>
   <img src="./assets/images/pattern-lines.svg" class="lines-background">
+  <img src="./assets/images/pattern-circle.svg" class="backgrund-circles" id="circle-top">
+  <img src="./assets/images/pattern-circle.svg" class="backgrund-circles" id="circle-bottom">
+  <img src="./assets/images/pattern-squiggly-line-top.svg" class="lines-background" id="line-top">
+  <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" class="lines-background" id="line-bottom">
   <div class="container">
     <div class="logo">
       <img src="./assets/images/logo-full.svg" alt="logo img">
@@ -25,16 +29,24 @@
       </p>
     </header>
     <form action="ticket.html">
-      <label for="img-input">Upload Avatar</label>
-      <br>
-      <input type="file" id="img-input" accept="image/*" hidden>
-      <div class="drop-zone">
-        <img src="./assets/images/icon-upload.svg" id="upload-img">
-        <span class="drag-drop-info">Drag and drop or click to upload</span>
+      <div class="input">
+        <label for="img-input">Upload Avatar</label>
+        <input type="file" id="img-input" accept="image/*" hidden>
+        <div class="drop-zone">
+          <img src="./assets/images/icon-upload.svg" id="upload-img">
+          <span class="drag-drop-info">Drag and drop or click to upload</span>
+          <div class="remove-change-file hidden">
+            <button class="rmv-chng-btn" id="remove-btn">Remove image</button>
+            <button class="rmv-chng-btn" id="change-btn">Change image</button>
+          </div>
+        </div>
+        <div class="file-info">
+          <img src="./assets/images/icon-info.svg" alt="info-img">
+          <span>
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </span>
+        </div>
       </div>
-      <span class="file-info">
-        Upload your photo (JPG or PNG, max size: 500KB).
-      </span>
       <div class="input">
         <label for="fname">Full Name</label>
         <input type="text" id="fname">
