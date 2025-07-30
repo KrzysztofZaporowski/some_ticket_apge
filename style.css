@@ -3,12 +3,12 @@
 :root {
     --neutral_0: hsl(0, 0%, 100%);;
     --neutral_300: hsl(252, 6%, 83%);
-    --Neutral_500: hsl(245, 15%, 58%);
-    --Neutral_700: hsl(245, 19%, 35%);
-    --Neutral_900: hsl(248, 70%, 10%);
-    --Orange_500: hsl(7, 88%, 67%);
-    --Orange_700: hsl(7, 71%, 60%);
-    --Gradient_text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+    --neutral_500: hsl(245, 15%, 58%);
+    --neutral_700: hsl(245, 19%, 35%);
+    --neutral_900: hsl(248, 70%, 10%);
+    --orange_500: hsl(7, 88%, 67%);
+    --orange_700: hsl(7, 71%, 60%);
+    --gradient_text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 }
 
 * {
@@ -34,10 +34,10 @@ body {
     margin: 0;
     min-height: 100vh;
     width: 100%;
-    overflow: hidden;
 }
 
 .lines-background {
+    max-height: 100vh;
     position: fixed;
     z-index: -1;
 }
@@ -76,7 +76,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     max-width: 800px;
     margin-top: 30px;
@@ -130,7 +130,12 @@ form {
     height: 120px;
     gap: 20px;
     padding: 10px;
+    transition: background-color 0.3s ease-in;
     width: 100%;
+}
+
+.drop-zone:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .drop-zone img {
@@ -141,14 +146,82 @@ form {
     padding: 5px;
 }
 
+.rmv-chng-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 8px;
+    color: var(--neutral_0);
+    font-size: 12px;
+    font-weight: 200;
+    padding: 5px;
+}
+
+.rmv-chng-btn:hover {
+    text-decoration: underline;
+}
+
+.rmv-chng-btn:active {
+    box-shadow: 
+        0px 0px 0px 2px var(--neutral_900),
+        0px 0px 0px 3px rgba(255, 255, 255, 0.9);
+    
+}
+
 .file-info {
     align-items: center;
     display: flex;
     flex-direction: row;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 100;
     justify-content: flex-start;
     gap: 8px;
+}
+
+.img-label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input input[type="text"] {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: var(--neutral_0);
+    transition: background-color 0.3s ease-in;
+    padding: 12px;
+}
+
+.input input[type="text"]:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.input input[type="text"]:focus {
+    box-shadow: 
+        0px 0px 0px 2px var(--neutral_900),
+        0px 0px 0px 3px rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+
+.submit-btn {
+    background-color: var(--orange_500);
+    border-radius: 10px;
+    border: none;
+    color: var(--neutral_900);
+    font-weight: 700;
+    padding: 12px 0;
+    transition: background-color 0.3s ease-in;
+}
+
+.submit-btn:hover {
+    background-color: var(--orange_700);
+}
+
+.submit-btn:active {
+    box-shadow: 
+        0px 0px 0px 2px var(--neutral_900),
+        0px 0px 0px 3px rgba(255, 255, 255, 0.9);
 }
 
 .hidden {
