@@ -43,12 +43,12 @@ body {
 }
 
 .backgrund-circles {
-    position: absolute;
+    position: fixed;
     z-index: 0;
 }
 
 .lines-background {
-    position: absolute;
+    position: fixed;
     z-index: 0;
 }
 
@@ -80,6 +80,7 @@ body {
     justify-content: center;
     max-width: 800px;
     margin-top: 30px;
+    margin-bottom: 30px;
     position: relative;
     z-index: 1;
 }
@@ -194,7 +195,8 @@ form {
     gap: 8px;
 }
 
-.input input[type="text"] {
+.input input[type="text"],
+.input input[type="email"] {
     background-color: rgba(255, 255, 255, 0.15);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
@@ -203,11 +205,18 @@ form {
     padding: 12px;
 }
 
-.input input[type="text"]:hover {
+.input.error input[type="text"],
+.input.error input[type="email"] {
+    border: 2px solid red;
+}
+
+.input input[type="text"]:hover,
+.input input[type="email"]:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.input input[type="text"]:focus {
+.input input[type="text"]:focus,
+.input input[type="email"]:focus {
     box-shadow: 
         0px 0px 0px 2px var(--neutral_900),
         0px 0px 0px 3px rgba(255, 255, 255, 0.9);
@@ -235,5 +244,24 @@ form {
 }
 
 .hidden {
+    display: none;
+}
+
+.error-info {
+    align-items: center;
+    color: red; 
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: 100;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.error-info img {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(94%) saturate(7438%) hue-rotate(353deg) brightness(92%) contrast(117%);
+}
+
+.error-info.hidden {
     display: none;
 }

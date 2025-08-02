@@ -9,12 +9,24 @@ const fileInfo = document.querySelector('.file-info');
 const infoMsg = document.getElementById('info-msg');
 const submitBtn = document.querySelector('.submit-btn')
 const defaultUploadImg = './assets/images/icon-upload.svg';
+const inputs = document.querySelectorAll('.input');
+const form = document.querySelector('form');
 
 // Text inputs
 const fname = document.getElementById('fname');
 const email = document.getElementById('email');
 const githubName = document.getElementById('github');
 
+// Drag and drop 
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    fileInput.files = e.dataTransfer.files;
+    updateImagePreview(fileInput.files[0]);
+});
 
 fileInput.addEventListener('change', () => {
     const file = fileInput.files[0];
@@ -49,17 +61,85 @@ removeBtn.addEventListener('click', (e) => {
     uploadInfo.classList.remove('hidden');
     fileInfo.classList.remove('error');
     infoMsg.textContent = 'Upload your photo (JPG or PNG, max size: 500KB).';
-})
+});
 
 function updateImagePreview(file) {
     const reader = new FileReader();
     reader.onload = function (e) {
-        const dataImage = e.target.result;
-        uploadImg.src = dataImage;
-        localStorage.setItem('profile-img', dataImage);
+        uploadImg.src = e.target.result;
         controls.classList.remove('hidden');
         uploadInfo.classList.add('hidden');
     };
     reader.readAsDataURL(file);
 }
 
+function setError(element, message) {
+    const parent = element.closest('.input');
+    parent.classList.add('error');
+    const errorDisplay = parent.querySelector('.error-info');
+
+    if (errorDisplay) {
+        const paragraph = errorDisplay.querySelector('p');
+        paragraph.textContent = message;
+        errorDisplay.classList.remove('hidden')
+    }
+}
+
+function clearError(element) {
+    const parent = element.closest('.input');
+    parent.classList.remove('error');
+    const errorDisplay = parent.querySelector('.error-info');
+
+    if (errorDisplay) {
+        const paragraph = errorDisplay.querySelector('p');
+        paragraph.textContent = '';
+        errorDisplay.classList.add('hidden');
+    }
+}
+
+fname.addEventListener('change', () => {
+    const firstName = fname.value.trim();
+    if(firstName === '') {
+        setError(fname, 'Please enter your name.');
+    } else {
+        clearError(fname);
+    }
+});
+
+email.addEventListener('change', () => {
+    const userEmail = email.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userEmail)) {
+        setError(email, 'Please enter a vaild email address.');
+    } else {
+        clearError(email);
+    }
+});
+
+githubName.addEventListener('change', () => {
+    const userGithub = githubName.value.trim();
+    const githubRegex = /^@[\w.-]+$/;
+    if (!githubRegex.test(userGithub)) {
+        setError(githubName, 'Please enter vaild GitHub name.');
+    } else {
+        clearError(githubName);
+    }
+});
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const allValid = Array.from(inputs).every(div => !div.classList.contains('error'));
+
+    if (!allValid || fileInput.value === '') {
+        return;
+    } else {
+        const userData = {
+            name: fname.value,
+            email: email.value,
+            github: githubName.value,
+            image: uploadImg.src
+        };
+        localStorage.setItem('userData', JSON.stringify(userData));
+        form.submit();
+    }
+})
