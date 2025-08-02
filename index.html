@@ -36,30 +36,30 @@
             <img src="./assets/images/icon-upload.svg" id="upload-img">
             <span class="drag-drop-info">Drag and drop or click to upload</span>
             <div class="remove-change-file hidden">
-              <button class="rmv-chng-btn" id="remove-btn">Remove image</button>
-              <button class="rmv-chng-btn" id="change-btn">Change image</button>
+              <button class="rmv-chng-btn" id="remove-btn" type="button">Remove image</button>
+              <button class="rmv-chng-btn" id="change-btn" type="button">Change image</button>
             </div>
           </div>
         </label>
-        <input type="file" id="img-input" accept="image/*" hidden required>
+        <input type="file" id="img-input" accept="image/*" hidden>
         <div class="file-info">
           <img src="./assets/images/icon-info.svg" alt="info-img">
-          <span>
+          <span id="info-msg">
             Upload your photo (JPG or PNG, max size: 500KB).
           </span>
         </div>
       </div>
       <div class="input">
         <label for="fname">Full Name</label>
-        <input type="text" id="fname" required>
+        <input type="text" id="fname">
       </div>
       <div class="input">
         <label for="email">Email Address</label>
-        <input type="text" id="email" placeholder="example@email.com" required>
+        <input type="text" id="email" placeholder="example@email.com">
       </div>
       <div class="input">
         <label for="github">GitHub Username</label>
-        <input type="text" id="github" placeholder="@yourusername" required>
+        <input type="text" id="github" placeholder="@yourusername">
       </div>
       <button type="submit" class="submit-btn">Generate My Ticket</button>
     </form>

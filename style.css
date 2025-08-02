@@ -143,6 +143,8 @@ form {
     border: 2px var(--neutral_0) solid;
     border-radius: 10px;
     cursor: pointer;
+    max-height: 44px;
+    max-width: 44px;
     padding: 5px;
 }
 
@@ -175,6 +177,14 @@ form {
     font-weight: 100;
     justify-content: flex-start;
     gap: 8px;
+}
+
+.file-info.error {
+    color: red;
+}
+
+.file-info.error img {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(94%) saturate(7438%) hue-rotate(353deg) brightness(92%) contrast(117%);
 }
 
 .img-label {
