@@ -132,6 +132,69 @@ body {
     width: 350px;
 }
 
+.conf-data {
+    width: 100%;
+}
+
+.conf-data p {
+    color: var(--neutral_300);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    word-spacing: 2px;
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    scale: 0.7;
+}
+
+.logo span {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.guest-data {
+    display: flex;
+    gap: 20px;
+}
+
+.user-img {
+    max-height: 60px;
+    max-width: 60px
+}
+
+.user-img img {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.meta-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.github-name {
+    align-items: center;
+    display: flex;
+    font-weight: 300;
+    gap: 5px;
+}
+
 .right {
     align-items: center;
     color: rgba(255, 255, 255, 0.5);
