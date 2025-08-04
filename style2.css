@@ -230,6 +230,10 @@ body {
         top: 5%;
         right: -55px;
     }
+
+    .ticket {
+        width: 90%;
+    }
 }
 
 
@@ -254,5 +258,9 @@ body {
     #line-top {
         top: 2%;
         right: -115px;
+    }
+
+    .ticket {
+        width: 90%;
     }
 }
