@@ -47,7 +47,7 @@ body {
     z-index: 0;
 }
 
-.lines-background {
+.line-background {
     position: fixed;
     z-index: 0;
 }
@@ -264,4 +264,61 @@ form {
 
 .error-info.hidden {
     display: none;
+}
+
+@media (max-width: 1024px) {
+    body {
+        background-image: url('./assets/images/background-tablet.png');
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .backgrund-circles {
+        scale: 0.75;
+    }
+
+    .line-background {
+        scale:0.75;
+    }
+
+    #line-bottom {
+        bottom: -70px;
+        left: -100px;
+    }
+
+    #line-top {
+        top: 5%;
+        right: -55px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    body {
+        background-image: url('./assets/images/background-mobile.png');
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .backgrund-circles {
+        scale: 0.5;
+    }
+
+    .line-background {
+        scale:0.5;
+    }
+
+    #line-bottom {
+        bottom: -130px;
+        left: -190px;
+    }
+
+    #line-top {
+        top: 2%;
+        right: -115px;
+    }
 }

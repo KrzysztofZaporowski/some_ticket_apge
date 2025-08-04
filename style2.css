@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    --neutral_0: hsl(0, 0%, 100%);;
+    --neutral_300: hsl(252, 6%, 83%);
+    --neutral_500: hsl(245, 15%, 58%);
+    --neutral_700: hsl(245, 19%, 35%);
+    --neutral_900: hsl(248, 70%, 10%);
+    --orange_500: hsl(7, 88%, 67%);
+    --orange_700: hsl(7, 71%, 60%);
+    --gradient_text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: start;
+    background-image: url('./assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--neutral_0);
+    display: flex;
+    justify-content: center;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.lines-background {
+    max-height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.backgrund-circles {
+    position: fixed;
+    z-index: 0;
+}
+
+.line-background {
+    position: fixed;
+    z-index: 0;
+}
+
+#circle-top {
+    left: 5%;
+    top: -120px;
+}
+
+#circle-bottom {
+    bottom: 25%;
+    right: 20%;
+}
+
+#line-bottom {
+    bottom: 0px;
+    left: 0px;
+}
+
+#line-top {
+    top: 5%;
+    right: 0px;
+}
+
+.ticket {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 55px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.ticket-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+}
+
+.welcome {
+    font-size: 38px;
+    text-align: center;
+}
+
+#name {
+    background: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    background-clip: text;
+    color: transparent;
+}
+
+.email-info {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 70%;
+    text-align: center;
+}
+
+#mail {
+    color: var(--orange_500);
+}
+
+.ticket-visualisation {
+    background-image: url('./assets/images/pattern-ticket.svg');
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    min-height: 200px;
+    min-width: 428px;
+}
+
+.left {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
+    width: 350px;
+}
+
+.right {
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    font-size: 22px;
+    justify-content: center;
+    width: 78px;
+}
+
+#number {
+    rotate: 90deg;
+}
+
+@media (max-width: 1024px) {
+    body {
+        background-image: url('./assets/images/background-tablet.png');
+    }
+
+    .backgrund-circles {
+        scale: 0.75;
+    }
+
+    .line-background {
+        scale:0.75;
+    }
+
+    #line-bottom {
+        bottom: -70px;
+        left: -100px;
+    }
+
+    #line-top {
+        top: 5%;
+        right: -55px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    body {
+        background-image: url('./assets/images/background-mobile.png');
+    }
+
+    .backgrund-circles {
+        scale: 0.5;
+    }
+
+    .line-background {
+        scale:0.5;
+    }
+
+    #line-bottom {
+        bottom: -130px;
+        left: -190px;
+    }
+
+    #line-top {
+        top: 2%;
+        right: -115px;
+    }
+}

@@ -5,18 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="style2.css">
 
     <title>Generated tickets</title>
 </head>
 <body>
-    Congrats, <!-- Full Name -->! Your ticket is ready.
-
-    We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-    Coding Conf
-    Jan 31, 2025 / Austin, TX
-    <div class="userData">
-
+    <img src="./assets/images/pattern-lines.svg" class="lines-background">
+    <img src="./assets/images/pattern-circle.svg" class="backgrund-circles" id="circle-top">
+    <img src="./assets/images/pattern-circle.svg" class="backgrund-circles" id="circle-bottom">
+    <img src="./assets/images/pattern-squiggly-line-top.svg" class="line-background" id="line-top">
+    <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" class="line-background" id="line-bottom">
+    
+    <div class="ticket">
+        <header>
+            <img src="./assets/images/logo-full.svg" alt="logo-full">
+        </header>
+        <div class="ticket-info">
+            <div class="welcome">
+                <!-- Added in script -->
+                <h1>Congrats, <span id="name">John</span>!</h1>
+                <h1>Your ticket is ready.</h1>
+            </div>
+            <div class="email-info">
+                <!-- Added in script -->
+                We've emailed your ticket to <span id="mail">supermail</span> and will send updates in the run up to the event.
+            </div>
+        </div>
+        <div class="ticket-visualisation">
+            <div class="left">
+                <div class="conf-data">
+                    <div class="logo">
+                        <img src="./assets/images/logo-mark.svg" alt="logo-mark">
+                        <span>Coding Conf</span>
+                    </div>
+                    <p>Jan 31, 2025 / Austin, TX</p>
+                </div>
+                <div class="guest-data">
+                    tekst
+                </div>
+            </div>
+            <div class="right">
+                <!-- Number added in script -->
+                 <span id="number">#131234</span>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

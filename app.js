@@ -11,6 +11,7 @@ const submitBtn = document.querySelector('.submit-btn')
 const defaultUploadImg = './assets/images/icon-upload.svg';
 const inputs = document.querySelectorAll('.input');
 const form = document.querySelector('form');
+const bottomLines = document.getElementById('line-bottom');
 
 // Text inputs
 const fname = document.getElementById('fname');
@@ -143,3 +144,14 @@ submitBtn.addEventListener('click', (e) => {
         form.submit();
     }
 })
+
+function updateImage() {
+    if (window.matchMedia('(max-width: 1024px)').matches) {
+        bottomLines.src = './assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg';
+    } else {
+        bottomLines.src = './assets/images/pattern-squiggly-line-bottom-desktop.svg';
+    }
+}
+
+window.addEventListener('DOMContentLoaded', updateImage);
+window.addEventListener('resize', updateImage);
